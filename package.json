@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "changelog": "standard-changelog",
-    "docs": "jsdoc src -r -R README.md -d docs",
+    "docs": "jsdoc src -p -r -R README.md -d docs",
     "lint": "standard --fix",
     "test": "jest --coverage"
   },
@@ -40,6 +40,9 @@
       "describe",
       "test",
       "expect"
+    ],
+    "ignore": [
+      "docs"
     ]
   },
   "lint-staged": {
