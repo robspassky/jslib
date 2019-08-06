@@ -10,4 +10,5 @@ jobs:
   include:
     - stage: Produce Coverage
       node_js: '12'
+      os: linux
       script: npm run coveralls
