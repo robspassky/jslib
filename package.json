@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "changelog": "standard-changelog",
+    "docs": "jsdoc src -r -R README.md -d docs",
     "lint": "standard --fix",
     "test": "jest --coverage"
   },
@@ -23,6 +24,7 @@
     "cz-conventional-changelog": "^3.0.2",
     "husky": "^3.0.2",
     "jest": "^24.8.0",
+    "jsdoc": "^3.6.3",
     "lint-staged": "^9.2.1",
     "standard": "^13.1.0",
     "standard-changelog": "^2.0.13"
@@ -33,9 +35,17 @@
     }
   },
   "standard": {
-    "globals": [ "jest", "describe", "test", "expect" ]
+    "globals": [
+      "jest",
+      "describe",
+      "test",
+      "expect"
+    ]
   },
   "lint-staged": {
-    "*.js": ["standard --fix", "git add"]
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ]
   }
 }
