@@ -4,6 +4,7 @@
   "description": "Javascript library of standard containers and algorithms",
   "main": "index.js",
   "scripts": {
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "changelog": "standard-changelog",
     "docs": "jsdoc src -p -r -R README.md -d docs",
     "lint": "standard --fix",
