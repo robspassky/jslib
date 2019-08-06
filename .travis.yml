@@ -5,3 +5,9 @@ os:
   - windows
   - linux
   - osx
+
+jobs:
+  include:
+    - stage: Produce Coverage
+      node_js: node_js
+      script: npx jest --coverage --coverageReporters=text-lcov | npx coveralls
