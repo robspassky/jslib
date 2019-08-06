@@ -4,6 +4,7 @@
   "description": "Javascript library of standard containers and algorithms",
   "main": "index.js",
   "scripts": {
+    "changelog": "standard-changelog",
     "test": "jest --coverage"
   },
   "repository": {
@@ -19,7 +20,8 @@
   "homepage": "https://github.com/robspassky/jslib#readme",
   "devDependencies": {
     "cz-conventional-changelog": "^3.0.2",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "standard-changelog": "^2.0.13"
   },
   "config": {
     "commitizen": {
