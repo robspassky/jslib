@@ -26,7 +26,7 @@ module.exports = class SLL {
   }
 
   /**
-   * Append an object to end of list
+   * Append an object to end of list in O(n)
    * @param {any} x - object to append
    */
   add (x) {
@@ -38,7 +38,7 @@ module.exports = class SLL {
   }
 
   /**
-   * Return current size of list
+   * Return current size of list in O(n)
    * @returns {number} size of list
    */
   size () {

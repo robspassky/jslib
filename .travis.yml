@@ -1,9 +1,9 @@
 language: node_js
 node_js: lts/*
 os:
-  - windows
   - linux
   - osx
+  - windows
 
 jobs:
   include:
@@ -13,11 +13,11 @@ jobs:
       script: npm run coveralls
     - stage: release
       node_js: lts/*
+      os: linux
       deploy:
         provider: script
         skip_cleanup: true
-        script:
-          - 'npm run release'
+        script: npm run release
 
 branches:
   only:
