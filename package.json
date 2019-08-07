@@ -1,6 +1,6 @@
 {
   "name": "robspassky-jslib",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Javascript library of standard containers and algorithms",
   "main": "index.js",
   "scripts": {
