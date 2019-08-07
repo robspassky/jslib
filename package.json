@@ -1,5 +1,5 @@
 {
-  "name": "jslib",
+  "name": "robspassky-jslib",
   "version": "1.0.0",
   "description": "Javascript library of standard containers and algorithms",
   "main": "index.js",
@@ -7,15 +7,16 @@
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "changelog": "standard-changelog",
     "docs": "jsdoc src -p -r -R README.md -d docs",
-    "lint": "standard --fix",
-    "test": "jest --coverage"
+    "format": "standard --fix",
+    "test": "jest --coverage",
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/robspassky/jslib.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rob Cabacungan <robspassky@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/robspassky/jslib/issues"
@@ -28,6 +29,7 @@
     "jest": "^24.8.0",
     "jsdoc": "^3.6.3",
     "lint-staged": "^9.2.1",
+    "semantic-release": "^15.13.19",
     "standard": "^13.1.0",
     "standard-changelog": "^2.0.13"
   },
