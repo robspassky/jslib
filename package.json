@@ -4,6 +4,7 @@
   "description": "Javascript library of standard containers and algorithms",
   "main": "index.js",
   "scripts": {
+    "commit": "git-cz",
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "changelog": "standard-changelog",
     "docs": "jsdoc src -p -r -R README.md -d docs",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/robspassky/jslib#readme",
   "devDependencies": {
+    "commitizen": "^4.0.3",
     "coveralls": "^3.0.5",
     "cz-conventional-changelog": "^3.0.2",
     "husky": "^3.0.2",
