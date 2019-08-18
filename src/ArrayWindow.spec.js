@@ -30,4 +30,10 @@ describe('ArrayWindow class', () => {
     const sut = new ArrayWindow([1, 2, 3, 4, 5])
     expect(sut.gkavg(2)).toStrictEqual([1.5, 2.5, 3.5, 4.5])
   })
+
+  test('max k-sum with generic method', () => {
+    const sut = new ArrayWindow([1, 2, 3, 4, 5])
+    expect(sut.maxksum(2)).toBe(9)
+  })
+
 })

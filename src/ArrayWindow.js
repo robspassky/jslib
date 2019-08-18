@@ -85,4 +85,9 @@ module.exports = class ArrayWindow {
     }
     return this.wcalc(k, 0, calcfn)
   }
+
+  maxksum(k) {
+    let results = this.gksum(k)
+    return results.reduce((max, cur) => max > cur ? max : cur, Number.MIN_SAFE_INTEGER)
+  }
 }
