@@ -41,32 +41,48 @@ module.exports = class ArrayWindow {
    * @param {Function} initfn 
    * @param {Function} calcfn 
    */
-  wcalc(k, initfn, calcfn) {
+  wcalc(k, initval, calcfn) {
     if (k > this.data.length) {
       return []
     }
-    let sum = initfn(this.data.slice(0, k))
-    let retval = [ sum ]
+    let retval = []
+    let result = initval
     let start = 0
-    let end = 0 + k
-    while (end < this.data.length) {
-      sum = calcfn(sum, this.data[start], this.data[end])
-      retval.push(sum)
-      start += 1
-      end += 1
+    for (let end = 0; end < this.data.length; end++) {
+      let add = this.data[end]
+      if (end - start >= k) {
+        let remove = this.data[start]
+        result = calcfn(result, add, remove)
+        start += 1
+      } else {
+        result = calcfn(result, add)
+      }
+      if (end - start >= (k - 1)) {
+        retval.push(result)
+      }
     }
     return retval
   }
 
-  gkavg(k) {
-    let initfn = array => array.reduce((sum, current) => sum += current, 0) / k
-    let calcfn = (avg, remove, add) => avg = ((avg*k) - remove + add) / k
-    return this.wcalc(k, initfn, calcfn)
+  gksum(k) {
+    let calcfn = (sum, add, remove) => {
+      if (remove === undefined) {
+        return sum + add
+      } else {
+        return sum + add - remove
+      }
+    }
+    return this.wcalc(k, 0, calcfn)
   }
 
-  gksum(k) {
-    let initfn = array => array.reduce((sum, current) => sum += current, 0)
-    let calcfn = (sum, remove, add) => sum = sum - remove + add
-    return this.wcalc(k, initfn, calcfn)
+  gkavg(k) {
+    let calcfn = (avg, add, remove) => {
+      if (remove === undefined) {
+        return ((avg * k) + add) / k
+      } else {
+        return ((avg * k) + add - remove) / k
+      }
+    }
+    return this.wcalc(k, 0, calcfn)
   }
 }
