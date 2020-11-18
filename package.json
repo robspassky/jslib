@@ -31,7 +31,7 @@
     "jest": "^24.8.0",
     "jsdoc": "^3.6.3",
     "lint-staged": "^9.2.1",
-    "semantic-release": "^15.13.19",
+    "semantic-release": "^17.2.3",
     "standard": "^13.1.0",
     "standard-changelog": "^2.0.13"
   },
